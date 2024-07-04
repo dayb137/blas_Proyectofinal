@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login as login_dj
 from usuarios.forms import Registro
+
 def login(request):
     formulario = AuthenticationForm()
     
@@ -29,3 +30,6 @@ def registro(request):
             return redirect('login')
         
     return render(request,'usuarios/registro.html', {'formulario':formulario})
+
+
+

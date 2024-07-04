@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+{% block title_head %}
+Posteo
+{% endblock title_head %}
+
+{% block h1_header %}
+{{publi}}
+{% endblock h1_header %}
+
+{% block main %}
+<ul>
+    <li>Servicio: {{publi.servicionombre}}</li>
+    <li>Descripcion: {{publi.descripcion}}</li>
+    <li>Fecha: {{publi.fecha}}</li>
+</ul>
+{% endblock main %}

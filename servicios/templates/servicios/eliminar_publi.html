@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{% block title_head %}
+Eliminar Publicacion
+{% endblock title_head %}
+
+{% block h1_header %}
+Eliminando Publicacion
+{% endblock h1_header %}
+
+{% block main %}
+
+<form action={% url "eliminar_publi" publi.id %} method="POST">
+    {% csrf_token %}
+    <p>
+        Desea eliminar la publicacion {{publi.servicionombre}}???
+    </p>
+    <input type="submit" value="Confirmar">
+</form>
+
+{% endblock main %}

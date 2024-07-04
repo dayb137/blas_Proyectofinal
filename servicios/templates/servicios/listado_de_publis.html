@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+{% block title_head %}
+Post de servicios
+{% endblock title_head %}
+
+{% block h1_header %}
+Listado de servicios
+{% endblock h1_header %}
+
+{% block main %}
+
+<a href={% url "crear_publi" %}>Crear Publicacion</a>
+
+{% if publicaciones %}
+    <ul>    
+        {% for publi in publicaciones %}
+        <li>{{publi}}| 
+            <a href={% url "eliminar_publi" publi.pk%}>Eliminar</a> |
+            <a href={% url "editar_publi" publi.pk%}>Editar</a> | 
+            <a href={% url "ver_publi" publi.pk%}>Ver</a> 
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+<p>No hay Publicaciones creados.</p>
+{% endif %}
+
+{% endblock main %}

@@ -21,6 +21,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#!">About me</a></li>
+                        <li class="nav-item"><a class="nav-link" href={% url "publi" %}>Servicios</a></li>
+
                         {% if request.user.is_authenticated %}
 
                         <li class="nav-item">
@@ -43,7 +45,7 @@
             <div class="text-center my-5">
               
                 <h1 class="text-black fs-3 fw-bolder">{% block h1_header %}{% endblock h1_header %}</h1>
-                <p class="text-black-50 mb-0">Un lugar para conectar con UNA misma...</p>
+                <p class="text-black-50 mb-0">Un lugar para conectar con UNO mismo...</p>
             </div>
         </header>
         
