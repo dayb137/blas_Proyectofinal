@@ -1,16 +1,18 @@
 {% extends "index.html" %}
 {% block title_head %}
-Posteo
+Ver Publicacion
+
 {% endblock title_head %}
 
 {% block h1_header %}
-{{publi}}
+{{servicio.Servicionombre}}
 {% endblock h1_header %}
 
 {% block main %}
+
 <ul>
-    <li>Servicio: {{publi.servicionombre}}</li>
-    <li>Descripcion: {{publi.descripcion}}</li>
-    <li>Fecha: {{publi.fecha}}</li>
+    <li>Servicio: {{servicio.Servicionombre}} </li>
+    <li>Descripcion: {{servicio.Descripcion}} </li>
+    <li>Fecha: {{servicio.fecha}} </li>
 </ul>
 {% endblock main %}

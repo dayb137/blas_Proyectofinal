@@ -10,7 +10,7 @@ Crear Publicacion
 
 {% block main %}
 
-<form action={% url "crear_publi" %} method="POST">
+<form action={% url "crear_publi" %} method="POST"enctype="multipart/form-data">
     {% csrf_token %}
 
     {{form}}

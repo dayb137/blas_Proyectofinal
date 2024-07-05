@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 
 {% block title_head %}
-Post de servicios
+Servicios
 {% endblock title_head %}
 
 {% block h1_header %}
@@ -12,9 +12,10 @@ Listado de servicios
 
 <a href={% url "crear_publi" %}>Crear Publicacion</a>
 
-{% if publicaciones %}
+{% if publi %}
+
     <ul>    
-        {% for publi in publicaciones %}
+        {% for publi in publi %}
         <li>{{publi}}| 
             <a href={% url "eliminar_publi" publi.pk%}>Eliminar</a> |
             <a href={% url "editar_publi" publi.pk%}>Editar</a> | 
@@ -23,7 +24,7 @@ Listado de servicios
         {% endfor %}
     </ul>
 {% else %}
-<p>No hay Publicaciones creados.</p>
+<p>No hay Publicaciones creadas.</p>
 {% endif %}
 
 {% endblock main %}

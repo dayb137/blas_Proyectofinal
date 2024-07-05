@@ -8,5 +8,7 @@ urlpatterns = [
      path('servicios/<int:pk>',views.VerPubli.as_view(), name='ver_publi'),
      path('servicios/<int:pk>',views.EditarPubli.as_view(), name='editar_publi'),
      path('servicios/<int:pk>',views.EliminarPubli.as_view(), name='eliminar_publi'),
+     path('servicios/buscar',views.BuscarPubli.as_view(), name='buscar'),
+     
      
 ]

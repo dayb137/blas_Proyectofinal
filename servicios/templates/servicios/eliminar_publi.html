@@ -10,10 +10,11 @@ Eliminando Publicacion
 
 {% block main %}
 
-<form action={% url "eliminar_publi" publi.id %} method="POST">
+<form action={% url "eliminar_publi" servicio.id %} method="POST">
     {% csrf_token %}
+
     <p>
-        Desea eliminar la publicacion {{publi.servicionombre}}???
+        Desea eliminar la publicacion {{servicio.servicionombre}}???
     </p>
     <input type="submit" value="Confirmar">
 </form>
