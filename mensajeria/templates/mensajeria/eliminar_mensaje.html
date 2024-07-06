@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block title_head %}
+Eliminar Mensajes
+{% endblock title_head %}
+
+{% block h1_header %}
+Eliminando Mensaje
+{% endblock h1_header %}
+
+{% block main %}
+
+<form action={% url "eliminar_mensaje" Mensaje.id %} method="POST">
+
+<form method="post">
+    {% csrf_token %}
+    <p> "Estas seguro que quiere borrar el mensaje de {{ mensaje.email }}? 
+    </p>
+    
+    <input class="btn btn-danger" type="submit" value="Borrar">
+    <a class="btn btn-primary" href="{% url 'mensaje-list' %}">Cancelar</a>
+
+</form>
+
+
+{%endblock%}

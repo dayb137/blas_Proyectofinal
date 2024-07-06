@@ -1,18 +1,21 @@
 {% extends "index.html" %}
+{% load static %}
+
 {% block title_head %}
 Ver Publicacion
 
 {% endblock title_head %}
 
 {% block h1_header %}
-{{servicio.Servicionombre}}
+{{servicio.Nombre}}
 {% endblock h1_header %}
 
 {% block main %}
 
 <ul>
-    <li>Servicio: {{servicio.Servicionombre}} </li>
+    <li>Servicio: {{servicio.Nombre}} </li>
     <li>Descripcion: {{servicio.Descripcion}} </li>
     <li>Fecha: {{servicio.fecha}} </li>
+    <li>Imagen:"<img src="{% static 'media/masajespiedrasjpg' %}" alt="Imagen"></li>
 </ul>
 {% endblock main %}

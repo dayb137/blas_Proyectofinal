@@ -22,16 +22,20 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#!">About me</a></li>
                         <li class="nav-item"><a class="nav-link" href={% url "publi" %}>Servicios</a></li>
-
+                        
                         {% if request.user.is_authenticated %}
-
-                        <li class="nav-item">
+                        <a class="navbar-brand" href="{% url 'crear_mensaje' %}"> Enviar Mensajes</a>
+                        <a class="nav-item"><a class="nav-link" href={% url "editar_perfil" %}>
+                            {% if request.user.datosextra.avatar %}
+                            <img src={{request.user.datosextra.avatar.url}} alt='Avatar' style="width: 50px; height: 50px;">
+                            {% endif %}
+                            {{request.user.username}}
+                        </a>
                             <form action={% url "logout" %} method='post'>
                                 {% csrf_token %}
                                 <input type='submit' class="nav-link" value='Cerrar Sesion'>
                             </form>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href={% url "editar_perfil" %}>{{request.user.username}}</a></li>
+
                          {% else %}
                          <li class="nav-item"><a class="nav-link active" aria-current="page" href={% url "login" %}>Iniciar sesion</a></li>
                         <li class="nav-item"><a class="nav-link" href={% url "registro" %}>Registrarse</a></li>

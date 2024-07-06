@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% block title_head %}
+Mensajes
+{% endblock title_head %}
+
+{% block h1_header %}
+
+<h1> Mis Mensajes </h1>
+
+{% endblock h1_header %}
+
+ {% block main %}
+ <a href={% url "crear_mensaje" %}>Crear Mensaje </a>
+
+ {% if mensaje %}
+
+ <ul>
+     {%  for mensaje in mensajes  %}
+     <li> Mensaje de: {{mensaje.email}} 
+         <br> 
+         {{ mensaje.mensaje }}
+         <br>
+         <a href="{% url 'eliminar_mensaje' mensaje.pk %}">Borrar</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+{% else %}
+<p> No tenes mensajes!...<p>
+    {% endif %}
+
+{% endblock main%}

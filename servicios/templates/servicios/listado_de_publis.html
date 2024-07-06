@@ -1,5 +1,6 @@
 {% extends "index.html" %}
 
+
 {% block title_head %}
 Servicios
 {% endblock title_head %}
@@ -12,19 +13,22 @@ Listado de servicios
 
 <a href={% url "crear_publi" %}>Crear Publicacion</a>
 
+<form action={% url "publi" %}>
+    {{formulario}}
+    <input type='submit' value='buscar'>
+</form>
+
 {% if publi %}
 
-    <ul>    
-        {% for publi in publi %}
-        <li>{{publi}}| 
-            <a href={% url "eliminar_publi" publi.pk%}>Eliminar</a> |
-            <a href={% url "editar_publi" publi.pk%}>Editar</a> | 
-            <a href={% url "ver_publi" publi.pk%}>Ver</a> 
-        </li>
-        {% endfor %}
-    </ul>
+<ul>
+    {% for publi in publi %}
+    <li><a href={% url "ver_publi" publi.id %}>{{publi}}</a> | <a href={% url "editar_publi" publi.id %}>Actualizar</a> | <a href={% url "eliminar_publi" publi.id %}>Eliminar</a></li>
+    {% endfor %}
+</ul>
+
 {% else %}
 <p>No hay Publicaciones creadas.</p>
 {% endif %}
+
 
 {% endblock main %}
