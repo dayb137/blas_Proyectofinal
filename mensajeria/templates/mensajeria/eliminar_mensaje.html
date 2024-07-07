@@ -12,15 +12,15 @@ Eliminando Mensaje
 
 {% block main %}
 
-<form action={% url "eliminar_mensaje" Mensaje.id %} method="POST">
+{% comment %} <form action={% url "eliminar_mensaje" Mensaje.id %} method="POST"> {% endcomment %}
 
 <form method="post">
     {% csrf_token %}
-    <p> "Estas seguro que quiere borrar el mensaje de {{ mensaje.email }}? 
+    <p> "Estas seguro que quiere borrar el mensaje de {{ mensaje.asunto }}? 
     </p>
     
     <input class="btn btn-danger" type="submit" value="Borrar">
-    <a class="btn btn-primary" href="{% url 'mensaje-list' %}">Cancelar</a>
+    <a class="btn btn-primary" href="{% url 'lista_mensaje' %}">Cancelar</a>
 
 </form>
 

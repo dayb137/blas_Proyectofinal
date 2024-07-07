@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% block title_head %}
+Mensajes
+{% endblock title_head %}
+
+{% block h1_header %}
+
+{{mensaje.asunto}}
+
+{% endblock h1_header %}
+{% block main %}
+
+<p>De: {{mensaje.remitente}}</p>
+<p>{{mensaje.cuerpo}}</p>
+
+
+ <a href={% url 'editar_mensaje' mensaje.pk%}>Editar</a>
+ <a href={% url 'eliminar_mensaje' mensaje.pk %}>Eliminar</a>
+
+
+{% endblock main%}

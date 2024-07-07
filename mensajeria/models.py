@@ -1,12 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Create your models here.
 class Mensaje(models.Model):
-    email = models.EmailField()
-    mensaje = models.TextField(max_length=500)
-    creado_el = models.DateTimeField(auto_now_add=True) 
-    
+    remitente = models.ForeignKey(User, related_name='Mensajes_enviados', on_delete=models.CASCADE)
+    receptor = models.ForeignKey(User, related_name='Mensajes_recibidos', on_delete=models.CASCADE)  
+    asunto = models.CharField(max_length=250, default='Asunto')
+    cuerpo = models.TextField()
+    fecha = models.DateTimeField()
+
      
     def __str__(self):
-        return f'{self.email} {self.mensaje} {self.creado_el}'
+        return self.asunto

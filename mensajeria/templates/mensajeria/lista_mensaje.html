@@ -17,17 +17,20 @@ Mensajes
 
  <ul>
      {%  for mensaje in mensajes  %}
-     <li> Mensaje de: {{mensaje.email}} 
+     <li> Mensaje de: {{mensaje.remitente}} 
          <br> 
-         {{ mensaje.mensaje }}
+         {{ mensaje.cuerpo }}
          <br>
-         <a href="{% url 'eliminar_mensaje' mensaje.pk %}">Borrar</a>
-        </li>
-        {% endfor %}
-    </ul>
-
-{% else %}
+         <a href="{% url 'ver_mensaje' mensaje.pk %}">{{mensaje.asunto}}</a> De
+         {{mensaje.remitente}}
+                </li>
+           {% endfor %}
+           
+           {% else %}
+           
+        </ul>
 <p> No tenes mensajes!...<p>
+    <a href="{% url 'crear_mensaje' %}">
     {% endif %}
 
 {% endblock main%}
