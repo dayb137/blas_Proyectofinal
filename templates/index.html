@@ -48,7 +48,9 @@
             <!-- Header - set the background image for the header in the line below-->
             {% block header %}
             <div class="text-center my-5">
-                <img class="img-fluid rounded-circle mb-4" src="media/multiemprendimientojpg" alt="imagen">
+                <img class="img-fluid rounded-circle mb-4" src="{% static 'imagenes\multiemprendimiento.jpg' %}" alt="imagen">
+
+                {% comment %} <img class="img-fluid rounded-circle mb-4" src="static/imagenes/multiemprendimiento.jpg" alt="imagen"> {% endcomment %}
                {% comment %} <header class="py-5 bg-image-full" style="background-image: {% url "media/multiemprendimientojpg" %}"> {% endcomment %}
                 
                      <h1 class="text-black fs-3 fw-bolder">
