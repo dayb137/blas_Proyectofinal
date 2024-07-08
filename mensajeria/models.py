@@ -6,7 +6,7 @@ class Mensaje(models.Model):
     receptor = models.ForeignKey(User, related_name='Mensajes_recibidos', on_delete=models.CASCADE)  
     asunto = models.CharField(max_length=250, default='Asunto')
     cuerpo = models.TextField()
-    fecha = models.DateTimeField()
+    fecha = models.DateTimeField(auto_now_add=True)
 
      
     def __str__(self):
