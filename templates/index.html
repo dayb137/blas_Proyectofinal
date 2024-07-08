@@ -20,14 +20,15 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href={% url "aboutme" %}>About me</a></li>
+                        <li class="nav-brand"><a class="nav-link" href={% url "aboutme" %}>About me</a></li>
                         <li class="nav-item"><a class="nav-link" href={% url "publi" %}>Servicios</a></li>
                         
                         {% if request.user.is_authenticated %}
                         <a class="navbar-brand" href="{% url 'crear_mensaje' %}"> Enviar Mensajes</a>
+                        <a class="navbar-brand" href="{% url "lista_mensajes" %}">Mis Mensajes</a>
                         <a class="nav-item"><a class="nav-link" href={% url "editar_perfil" %}>
                             {% if request.user.datosextra.avatar %}
-                            <img src={{request.user.datosextra.avatar.url}} alt='Avatar' style="width: 50px; height: 50px;">
+                            <img src={{request.user.datosextra.avatar.url}} alt='Avatar' style="width: 40px; height: 40px;">
                             {% endif %}
                             {{request.user.username}}
                         </a>
@@ -43,13 +44,13 @@
                     </ul>
                 </div>
             </div>
-        </nav>
-        {% comment %} <header class="py-5 bg-image-full" style="background-image: {% url "media" %}"> {% endcomment %}
-        <!-- Header - set the background image for the header in the line below-->
-        {% block header %}
-                     <div class="text-center my-5">
-                     <img class="img-fluid rounded-circle mb-4" src="media" alt="multiemprenidmientojpg">
-                     
+            </nav>
+            <!-- Header - set the background image for the header in the line below-->
+            {% block header %}
+            <div class="text-center my-5">
+                <img class="img-fluid rounded-circle mb-4" src="media/multiemprendimientojpg" alt="imagen">
+               {% comment %} <header class="py-5 bg-image-full" style="background-image: {% url "media/multiemprendimientojpg" %}"> {% endcomment %}
+                
                      <h1 class="text-black fs-3 fw-bolder">
                     {% block h1_header %}{% endblock h1_header %}</h1>
                  {% block h2_header %}

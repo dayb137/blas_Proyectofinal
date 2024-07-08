@@ -24,23 +24,23 @@ class VerMensaje(LoginRequiredMixin,DetailView):
 class CrearMensaje(LoginRequiredMixin,CreateView):
     model = Mensaje
     template_name = 'mensajeria/crear_mensaje.html'
-    success_url = reverse_lazy('lista_mensaje')
-    fields = ['receptor','asunto', 'cuerpo']
+    success_url = reverse_lazy('lista_mensajes')
+    fields = ['remitente','receptor','asunto', 'cuerpo']
     
     def form_valid(self, form):
         form.instance.remitente = self.request.user
         return super().form_valid(form)
     
-class EliminarMensaje(LoginRequiredMixin,DeleteView):
-    model = Mensaje
-    template_name = 'mensajeria/eliminar_mensaje.html'
-    success_url = reverse_lazy('lista_mensaje')
-    
 class EditarMensaje(LoginRequiredMixin,UpdateView):
     model = Mensaje
     template_name= 'mensajeria/crear_mensaje.html'
-    success_url = reverse_lazy('lista_mensaje')
+    success_url = reverse_lazy('lista_mensajes')
     
+    
+class EliminarMensaje(LoginRequiredMixin,DeleteView):
+    model = Mensaje
+    template_name = 'mensajeria/eliminar_mensaje.html'
+    success_url = reverse_lazy('lista_mensajes')
     
 
   

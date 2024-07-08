@@ -16,11 +16,11 @@ Eliminando Mensaje
 
 <form method="post">
     {% csrf_token %}
-    <p> "Estas seguro que quiere borrar el mensaje de {{ mensaje.asunto }}? 
+    <p> "Estas seguro que quiere borrar el mensaje  {{ mensaje.fecha }}? 
     </p>
     
     <input class="btn btn-danger" type="submit" value="Borrar">
-    <a class="btn btn-primary" href="{% url 'lista_mensaje' %}">Cancelar</a>
+    <a class="btn btn-primary" href="{% url 'lista_mensajes' %}">Cancelar</a>
 
 </form>
 

@@ -21,8 +21,7 @@ Mensajes
          <br> 
          {{ mensaje.cuerpo }}
          <br>
-         <a href="{% url 'ver_mensaje' mensaje.pk %}">{{mensaje.asunto}}</a> De
-         {{mensaje.remitente}}
+         <a href="{% url 'ver_mensaje' mensaje.pk %}">{{mensaje.asunto}} De {{mensaje.remitente}}</a>
                 </li>
            {% endfor %}
            

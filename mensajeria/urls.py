@@ -9,8 +9,5 @@ urlpatterns = [
     path('mensajes/<int:pk>/editar',views.EditarMensaje.as_view(), name='editar_mensaje'),
     path('mensajes/<int:pk>/eliminar',views.EliminarMensaje.as_view(), name='eliminar_mensaje'),
     
-    
-    
-  
 ]
 
