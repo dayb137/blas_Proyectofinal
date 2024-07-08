@@ -34,7 +34,7 @@ class CrearMensaje(LoginRequiredMixin,CreateView):
 class EditarMensaje(LoginRequiredMixin,UpdateView):
     model = Mensaje
     template_name= 'mensajeria/crear_mensaje.html'
-    success_url = reverse_lazy('lista_mensajes')
+    success_url = reverse_lazy('mensajes')
     
     
 class EliminarMensaje(LoginRequiredMixin,DeleteView):
@@ -46,4 +46,5 @@ class EliminarMensaje(LoginRequiredMixin,DeleteView):
   
     
     
+  
   

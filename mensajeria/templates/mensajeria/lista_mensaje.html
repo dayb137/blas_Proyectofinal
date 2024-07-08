@@ -13,15 +13,16 @@ Mensajes
  {% block main %}
  <a href={% url "crear_mensaje" %}>Crear Mensaje </a>
 
- {% if mensaje %}
+ {% if mensajes %}
 
  <ul>
-     {%  for mensaje in mensajes  %}
-     <li> Mensaje de: {{mensaje.remitente}} 
+     {%  for mensajes in mensajes  %}
+     <a href="{% url 'ver_mensaje' mensajes.pk %}">Asunto:{{mensajes.asunto}}  De: {{mensajes.remitente}} {{mensajes.fecha}}</a>
+     <li> Mensaje de: {{mensajes.remitente}} 
          <br> 
-         {{ mensaje.cuerpo }}
+         {{ mensajes.cuerpo }}
          <br>
-         <a href="{% url 'ver_mensaje' mensaje.pk %}">{{mensaje.asunto}} De {{mensaje.remitente}}</a>
+         
                 </li>
            {% endfor %}
            
