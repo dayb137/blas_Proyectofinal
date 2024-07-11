@@ -28,3 +28,6 @@ El proyecto utiliza las siguientes tecnologías:
 - Python 3.12
 - Django 5.0.6
 
+### Video demo
+https://youtu.be/Sk8ZPP--ti4
+
