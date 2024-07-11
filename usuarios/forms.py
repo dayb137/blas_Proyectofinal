@@ -17,6 +17,7 @@ class EditarPerfil(UserChangeForm):
     email = forms.EmailField()
     first_name = forms.CharField(label='Nombre')
     last_name = forms.CharField(label='Apellido')
+    telefono = forms.IntegerField(required=False)
     avatar = forms.ImageField(required=False)
     
     
