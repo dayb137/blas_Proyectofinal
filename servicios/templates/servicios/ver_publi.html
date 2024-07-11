@@ -9,7 +9,8 @@ Ver Publicacion
 
 
 {% block h1_header %}
-{{servicio.Nombre}}
+<img src='{{servicio.image.url}}' alt='{{servicio.nombre}}' width="369" height="369">  
+                  {{servicio.Nombre}}
 
 {% endblock h1_header %}
 
@@ -19,5 +20,7 @@ Ver Publicacion
     <li>Servicio: {{servicio.Nombre}} </li>
     <li>Descripcion: {{servicio.Descripcion}} </li>
     <li>Fecha: {{servicio.fecha}} </li>
+    <li>Telefono: {{servicio.telefonocontacto}} </li>
+
 </ul>
 {% endblock main %}

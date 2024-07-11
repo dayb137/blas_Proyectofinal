@@ -22,8 +22,14 @@ Listado de servicios
 
 <ul>
     {% for publi in publi %}
-    <li><a href={% url "ver_publi" publi.id %}>{{publi}}</a> | <a href={% url "editar_publi" publi.id %}>Actualizar</a> | <a href={% url "eliminar_publi" publi.id %}>Eliminar</a></li>
+
+    <li>
+        <a href={% url "ver_publi" publi.id %}>{{publi}}</a> | 
+        <a href={% url "editar_publi" publi.id %}>Actualizar</a> |
+        <a href={% url "eliminar_publi" publi.id %}>Eliminar</a> |   
+            </li>
     {% endfor %}
+
 </ul>
 
 {% else %}
