@@ -17,7 +17,7 @@ Mensajes
 
  <ul>
      {%  for mensajes in mensajes  %}
-     <a href="{% url 'ver_mensaje' mensajes.pk %}">Asunto:{{mensajes.asunto}}  De: {{mensajes.remitente}} {{mensajes.fecha}}</a>
+     <a href="{% url 'ver_mensaje' mensajes.pk %}">Asunto: {{mensajes.asunto}}  De: {{mensajes.remitente}} {{mensajes.fecha}}</a>
      <li> Mensaje de: {{mensajes.remitente}} 
          <br> 
          {{ mensajes.cuerpo }}

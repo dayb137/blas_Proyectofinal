@@ -25,7 +25,7 @@ class CrearMensaje(LoginRequiredMixin,CreateView):
     model = Mensaje
     template_name = 'mensajeria/crear_mensaje.html'
     success_url = reverse_lazy('lista_mensajes')
-    fields = ['remitente','receptor','asunto', 'cuerpo']
+    fields = ['receptor','asunto', 'cuerpo']
     
     def form_valid(self, form):
         form.instance.remitente = self.request.user

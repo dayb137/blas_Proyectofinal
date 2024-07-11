@@ -40,7 +40,7 @@ class EliminarPubli(LoginRequiredMixin,DeleteView):
 class EditarPubli(LoginRequiredMixin,UpdateView):
     model = Servicio
     template_name ='servicios/editar_publi.html'
-    success_url = reverse_lazy('listado_de_publis')
+    success_url = reverse_lazy('publi')
     fields = '__all__'
     
 class VerPubli(DetailView):

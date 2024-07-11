@@ -12,11 +12,14 @@ Mensajes
 {% block main %}
 
 <p>De: {{mensaje.remitente}}</p>
-<p>{{mensaje.cuerpo}}</p>
+<p>Asunto: {{mensaje.asunto}}</p>
+<p>Mensaje: {{mensaje.cuerpo}}</p>
 
-
- <a href={% url 'editar_mensaje' mensaje.pk%}>Editar</a>
+{% comment %} 
+ <a href={% url 'editar_mensaje' mensaje.pk%}>Editar</a> {% endcomment %}
+ <a href={% url 'crear_mensaje' %}>Responder</a>
  <a href={% url 'eliminar_mensaje' mensaje.pk %}>Eliminar</a>
+
 
 
 {% endblock main%}
