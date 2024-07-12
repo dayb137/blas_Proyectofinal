@@ -30,8 +30,6 @@ class NuevoPassword(PasswordChangeForm):
     new_password1= forms.CharField(label='Password nuevo')
     new_password2 = forms.CharField(label='Repetir Password')
     
-    class Meta:
-        model = User
-        fields = ['old_password','new_password1','new_password2']
-        help_texts = {key:'' for key in fields}
+   
+    
     
